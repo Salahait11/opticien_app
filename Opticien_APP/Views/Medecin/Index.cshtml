@@ -1,0 +1,60 @@
+cshtml
+@model IEnumerable<Opticien_APP.Models.Medecin>
+
+@{
+    ViewBag.Title = "Medecins";
+}
+
+
+@using (Html.BeginForm("Index", "Medecin", FormMethod.Get))
+{
+    <p>
+        Rechercher par nom et prenom : @Html.TextBox("SearchString") <input type="submit" value="Rechercher" />
+    </p>
+}
+<h2>Medecins</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.prenom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gsm)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.prenom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gsm)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

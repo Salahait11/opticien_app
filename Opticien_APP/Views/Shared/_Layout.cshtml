@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
@@ -16,12 +16,20 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
-                    <li>@Html.ActionLink("Accueil", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("À propos de", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                </ul>
+           <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">                    
+                     <li>@Html.ActionLink("Accueil", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                     <li>@Html.ActionLink("Clients", "Index", "Client", new { area = "" }, new { @class = "nav-link" })</li>
+                     <li>@Html.ActionLink("Médecins", "Index", "Medecin", new { area = "" }, new { @class = "nav-link" })</li>
+                     <li>@Html.ActionLink("Ordonnances", "Index", "Ordonnance", new { area = "" }, new { @class = "nav-link" })</li>
+                     <li>@Html.ActionLink("Ventes", "Index", "OperationVente", new { area = "" }, new { @class = "nav-link" })</li>
+                     <li>@Html.ActionLink("Paiements", "Index", "Paiement", new { area = "" }, new { @class = "nav-link" })</li>
+                     <li>@Html.ActionLink("Verres", "Index", "Verres", new { area = "" }, new { @class = "nav-link" })</li>
+                     <li>@Html.ActionLink("Lignes de Vente", "Index", "LignOpVente", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Montures", "Index", "Monture", new { area = "" }, new { @class = "nav-link" })</li>
+
+                </ul>    
+                
             </div>
         </div>
     </nav>

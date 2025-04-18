@@ -1,0 +1,47 @@
+cshtml
+@model Opticien_APP.Models.Client
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Supprimer un Client</h2>
+<h3>Êtes-vous sûr de vouloir supprimer ce client ?</h3>
+<hr />
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.ID)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.ID)</dd>
+            
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Nom)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Nom)</dd>
+            
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Prenom)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Prenom)</dd>
+            
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DateDeNaissance)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.DateDeNaissance)</dd>
+            
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Adresse)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.Adresse)</dd>
+            
+            <dt class="col-sm-3">@Html.DisplayNameFor(model => model.NumeroDeTelephone)</dt>
+            <dd class="col-sm-9">@Html.DisplayFor(model => model.NumeroDeTelephone)</dd>
+        </dl>
+    </div>
+</div>
+<br/>
+<div>
+    
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Cancel", "Index",null,new {@class="btn btn-default"})
+        </div>
+    }
+
+</div>

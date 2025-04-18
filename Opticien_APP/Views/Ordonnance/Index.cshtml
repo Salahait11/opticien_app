@@ -1,0 +1,56 @@
+cshtml
+@model IEnumerable<Opticien_APP.Models.Ordonnance>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Ordonnances</h2>
+
+@using (Html.BeginForm("Index", "Ordonnance", FormMethod.Get))
+{
+    <p>
+        Rechercher par date de prescription: @Html.TextBox("SearchString")  <input type="submit" value="Rechercher" class="btn btn-primary"/>
+    </p>
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateDePrescription)
+        </th>
+        <th>
+            Medecin
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateDePrescription, "{0:dd/MM/yyyy}")
+        </td>
+        <td>
+           @if (item.medecinID != null)
+           {
+                @Html.DisplayFor(modelItem => item.Medecin.nom) @Html.DisplayFor(modelItem => item.Medecin.prenom)
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

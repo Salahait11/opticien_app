@@ -1,0 +1,59 @@
+cshtml
+@model IEnumerable<Opticien_APP.Models.Paiement>
+
+@{
+    ViewBag.Title = "Paiements";
+}
+
+@using (Html.BeginForm("Index", "Paiement", FormMethod.Get))
+{
+    <p>
+        Rechercher par Mode de Paiement: @Html.TextBox("SearchString")
+        <input type="submit" value="Rechercher" class="btn btn-primary"/>
+    </p>
+}
+<h2>Paiements</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModeDePaiement)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Avance)
+        </th>
+        <th>
+            @Html.DisplayName("Operation de Vente")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModeDePaiement)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Avance)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OperationVente.NumeroOp)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

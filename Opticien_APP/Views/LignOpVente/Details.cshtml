@@ -1,0 +1,79 @@
+cshtml
+@model Opticien_APP.Models.LignOpVente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LignOpVente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Reference)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reference)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quantité)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quantité)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remise)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remise)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OperationVente)
+        </dt>
+
+        <dd>
+            @if (Model.OperationVente != null)
+            {
+                @Html.DisplayFor(model => model.OperationVente.NumeroOp)
+            }
+            else
+            {
+                <span>N/A</span>
+            }
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VERRES)
+        </dt>
+
+        <dd>
+            @if (Model.VERRES != null)
+            {
+                @Html.DisplayFor(model => model.VERRES.TypeDeVerre)
+            }
+            else
+            {
+                <span>N/A</span>
+            }
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

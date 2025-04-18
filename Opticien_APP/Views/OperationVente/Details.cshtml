@@ -1,0 +1,108 @@
+cshtml
+@model Opticien_APP.Models.OperationVente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>OperationVente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroOp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroOp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDeVente)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDeVente, "{0:dd/MM/yyyy}")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateLivrisonprevu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateLivrisonprevu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Remarque)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Remarque)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Montant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Montant)
+        </dd>
+
+        <dt>
+            Client
+        </dt>
+
+        <dd>
+            @if (Model.Client != null)
+            {
+                @Html.DisplayFor(model => model.Client.Nom)
+                @Html.DisplayFor(model => model.Client.Prenom)
+                <br />
+                <span>
+                    Date de naissance : @Html.DisplayFor(model => model.Client.DateDeNaissance)
+                </span>
+                <br />
+                <span>
+                    Adresse : @Html.DisplayFor(model => model.Client.Adresse)
+                </span>
+                 <br />
+                <span>
+                   Numero de telephone : @Html.DisplayFor(model => model.Client.NumeroDeTelephone)
+                </span>
+            }
+            else
+            {
+                <span>Client non trouvé</span>
+            }
+        </dd>
+
+        <dt>
+            Ordonnance
+        </dt>
+
+        <dd>
+            @if (Model.Ordonnance != null)
+            {
+                 <span>
+                    Date de prescription : @Html.DisplayFor(model => model.Ordonnance.DateDePrescription)
+                </span>
+                <br />
+                 <span>
+                    Medecin : @Html.DisplayFor(model => model.Ordonnance.Medecin.nom) @Html.DisplayFor(model => model.Ordonnance.Medecin.prenom)
+                </span>
+            }
+            else
+            {
+                <span>Ordonnance non trouvée</span>
+            }
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

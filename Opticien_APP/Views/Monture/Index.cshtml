@@ -1,0 +1,63 @@
+cshtml
+@model IEnumerable<Opticien_APP.Models.Monture>
+
+@{
+    ViewBag.Title = "Montures";
+}
+
+<h2>Montures</h2>
+
+@using (Html.BeginForm("Index", "Monture", FormMethod.Get))
+{
+    <p>Search by brand or color: @Html.TextBox("SearchString") <input type="submit" value="Search" /></p>
+}
+
+<p>
+    <a href="@Url.Action("Create")" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.marque)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.couleur)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.taille)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prix)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.marque)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.couleur)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.taille)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prix)
+        </td>
+        <td>
+            <a href="@Url.Action("Edit", new { id=item.ID })" class="btn btn-warning">Edit</a>
+            <a href="@Url.Action("Details", new { id=item.ID })" class="btn btn-info">Details</a>
+            <a href="@Url.Action("Delete", new { id=item.ID })" class="btn btn-danger">Delete</a>
+        </td>
+    </tr>
+}
+
+</table>

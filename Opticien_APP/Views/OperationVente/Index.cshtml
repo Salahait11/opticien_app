@@ -1,0 +1,77 @@
+cshtml
+@model List<Opticien_APP.Models.OperationVente>
+@using Opticien_APP.Models
+
+@{
+    ViewBag.Title = "OperationVentes";
+}
+
+@using (Html.BeginForm("Index", "OperationVente", FormMethod.Get))
+{
+    <p>Find by name: @Html.TextBox("SearchString") <input type="submit" value="Search" /></p>
+}
+
+<h2>OperationVentes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroOp)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateDeVente)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateLivrisonprevu)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Montant)
+        </th>
+        <th></th>
+           <th>
+            Client
+        </th>
+         <th>
+            Medecin
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroOp)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateDeVente, "{0:dd/MM/yyyy}")
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateLivrisonprevu)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Montant)
+        </td>
+         <td>
+            @Html.DisplayFor(modelItem => item.Client.Nom) @Html.DisplayFor(modelItem => item.Client.Prenom)
+        </td>
+         <td>
+            @if (item.Ordonnance != null) { @Html.DisplayFor(modelItem => item.Ordonnance.Medecin.nom)  @Html.DisplayFor(modelItem => item.Ordonnance.Medecin.prenom) }
+        </td>
+        <td>
+             @Html.ActionLink("Details", "Details", new { id=item.ID }, new { @class = "btn btn-info" })
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }, new { @class = "btn btn-warning" })
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID }, new { @class = "btn btn-danger" })
+           
+        </td>
+    </tr>
+}
+
+</table>

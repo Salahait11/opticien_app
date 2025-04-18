@@ -1,0 +1,257 @@
+cshtml
+@model Opticien_APP.Models.Ordonnance
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ordonnance</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DateDePrescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateDePrescription, "{0:dd/MM/yyyy}")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VL_SPH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VL_SPH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VL_CYL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VL_CYL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VL_AXE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VL_AXE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VL_ADD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VL_ADD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VL_EP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VL_EP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VL_H)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VL_H)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VL_DAIM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VL_DAIM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VL_SPH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VL_SPH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VL_CYL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VL_CYL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VL_AXE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VL_AXE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VL_ADD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VL_ADD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VL_EP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VL_EP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VL_H)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VL_H)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VL_DAIM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VL_DAIM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VP_SPH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VP_SPH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VP_CYL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VP_CYL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VP_AXE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VP_AXE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VP_ADD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VP_ADD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VP_EP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VP_EP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VP_H)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VP_H)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OD_VP_DAIM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OD_VP_DAIM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VP_SPH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VP_SPH)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VP_CYL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VP_CYL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VP_AXE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VP_AXE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VP_ADD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VP_ADD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VP_EP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VP_EP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VP_H)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VP_H)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OG_VP_DAIM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OG_VP_DAIM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.medecinID)
+        </dt>
+        <dd>
+             @Html.DisplayFor(model => model.Medecin.nom)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

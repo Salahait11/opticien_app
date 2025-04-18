@@ -1,0 +1,67 @@
+cshtml
+@model IEnumerable<Opticien_APP.Models.LignOpVente>
+
+@{
+    ViewBag.Title = "Index"; 
+}
+
+<h2>Ligne d'Opération de Vente</h2>
+
+@using (Html.BeginForm("Index", "LignOpVente", FormMethod.Get))
+{
+    <div class="form-group">
+        <input type="text" name="searchString" class="form-control" placeholder="Rechercher par référence" value="@ViewBag.CurrentFilter" />
+        <button type="submit" class="btn btn-primary">Rechercher</button>
+    </div>
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Reference)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Quantité)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remise)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PU)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OperationVente.NumeroOp)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reference)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantité)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Remise)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PU)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OperationVente.NumeroOp)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-warning btn-sm" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-info btn-sm" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger btn-sm" })
+            </td>
+        </tr>
+    }
+
+</table>

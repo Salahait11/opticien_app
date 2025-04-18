@@ -1,16 +1,27 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Opticien_APP.Models;
 
 namespace Opticien_APP.Controllers
 {
     public class HomeController : Controller
     {
+        private OpticienDbContext db = new OpticienDbContext();
         public ActionResult Index()
         {
-            return View();
+            try
+            {
+                var ordonnances = db.Ordonnances.Include(o => o.Medecin).Take(3).ToList();
+                return View(ordonnances);
+            }
+            catch (Exception ex)
+            {
+                return View("Error", new HandleErrorInfo(ex, "Home", "Index"));
+            }
         }
 
         public ActionResult About()
